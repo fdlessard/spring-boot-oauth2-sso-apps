@@ -1,0 +1,3 @@
+include 'io.fdlessard.codebites.oauth2.sso.apps.api'
+include 'io.fdlessard.codebites.oauth2.sso.apps.ui'
+

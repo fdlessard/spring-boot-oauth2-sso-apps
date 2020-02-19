@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+logging:
+  level.io.fdlessard.codebites.oauth2.sso.apps.ui: DEBUG
+#  level.root: DEBUG
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-name: Okta
+            client-id: 0oa2a55teeqhX2CcY4x6
+            client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
+        provider:
+          okta:
+            authorization-uri: https://dev-275566.okta.com/oauth2/default/v1/authorize
+            token-uri: https://dev-275566.okta.com/oauth2/default/v1/token
+            user-info-uri: https://dev-275566.okta.com/oauth2/default/v1/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://dev-275566.okta.com/oauth2/default/v1/keys
