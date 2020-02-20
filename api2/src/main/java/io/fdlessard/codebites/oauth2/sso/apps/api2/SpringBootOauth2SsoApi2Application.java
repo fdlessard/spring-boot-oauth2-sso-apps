@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootOauth2SsoApiApplication {
+public class SpringBootOauth2SsoApi2Application {
 
   public static void main(String[] args) {
     SpringApplication.run(SpringBootOauth2SsoApi2Application.class, args);
