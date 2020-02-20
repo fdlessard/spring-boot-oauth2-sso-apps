@@ -10,3 +10,4 @@
 
 
 - https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html/boot-features-security-oauth2-resource-server.html
+- https://github.com/spring-projects/spring-security/issues/6342

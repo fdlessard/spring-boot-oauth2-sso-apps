@@ -1,3 +1,4 @@
-include 'io.fdlessard.codebites.oauth2.sso.apps.api'
+include 'io.fdlessard.codebites.oauth2.sso.apps.api1'
+include 'io.fdlessard.codebites.oauth2.sso.apps.api2'
 include 'io.fdlessard.codebites.oauth2.sso.apps.ui'
 

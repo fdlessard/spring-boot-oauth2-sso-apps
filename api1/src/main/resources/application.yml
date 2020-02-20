@@ -1,0 +1,29 @@
+server:
+  port: 8081
+
+logging:
+  level.io.fdlessard.codebites.oauth2.sso.apps.api1: DEBUG
+#  level.root: DEBUG
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://dev-275566.okta.com/oauth2/default/v1/keys
+
+#    client:
+#      client-id: 0oa2a55teeqhX2CcY4x6
+#      client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
+#    resource:
+#      prefer-token: info=true
+#      token-info-uri: https://dev-275566.okta.com/oauth2/default/v1/token
+#      userInfoUri: https://dev-275566.okta.com/oauth2/default/v1/userinfo
+#      resourceserver:
+#        jwt:
+#          jwk-set-uri: https://dev-275566.okta.com/oauth2/default/v1/keys
+#     spring.security.oauth2.resourceserver.jwt.jwk-set-uri
+# security.oauth2.resource.jwk.key-set-uri
+# tokenInfoUri: https://dev-275566.okta.com/oauth2/default/v1/introspect
+# userInfoUri: https://{yourOktaDomain}.okta.com/oauth2/default/v1/userinfo
+
