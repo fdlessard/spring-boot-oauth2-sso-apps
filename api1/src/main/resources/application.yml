@@ -2,13 +2,24 @@ server:
   port: 8081
 
 logging:
-  level.io.fdlessard.codebites.oauth2.sso.apps.api1: DEBUG
-#  level.root: DEBUG
+  level:
+    root: DEBUG
+#    org.springframework.security: INFO
+#    org.springframework.security.oauth2: INFO
+    io.fdlessard.codebites.oauth2.sso.apps.api1: DEBUG
+
 
 spring:
   security:
     oauth2:
       resourceserver:
+#        opaquetoken:
+#          client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
+#          client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
+#          introspection-uri: https://login.microsoftonline.com/organizations/discovery/v2.0/keys
         jwt:
-          jwk-set-uri: https://dev-275566.okta.com/oauth2/default/v1/keys
+#          jwk-set-uri: https://dev-275566.okta.com/oauth2/default/v1/keys
+          jwk-set-uri: https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/discovery/v2.0/keys
+
+
 

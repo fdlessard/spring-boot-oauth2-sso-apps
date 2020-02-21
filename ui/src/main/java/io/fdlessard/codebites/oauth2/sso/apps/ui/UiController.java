@@ -24,8 +24,10 @@ public class UiController {
   }
 
   @GetMapping("/api1")
-  public String api1() {
-    log.debug("Calling UiController.api1() endpoint, before remote call");
+  public String api1(Principal principal) {
+    String name = principal.getName();
+
+    log.debug("Calling UiController.api1() endpoint, before remote call " + name);
 
     return this.webClient
         .get()
