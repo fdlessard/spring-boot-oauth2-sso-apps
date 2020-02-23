@@ -2,6 +2,9 @@ package io.fdlessard.codebites.oauth2.sso.apps.ui;
 
 import java.security.Principal;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -10,11 +13,15 @@ import org.springframework.web.reactive.function.client.WebClient;
 @RestController
 public class UiController {
 
+  @Autowired
+  private ClientRegistrationRepository clientRegistrations;
+  @Autowired
+  private OAuth2AuthorizedClientRepository authorizedClient;
+  @Autowired
+
   private WebClient webClient;
 
-  public UiController(WebClient webClient) {
-    this.webClient = webClient;
-  }
+
 
   @GetMapping("/ui")
   public String ui(Principal principal) {

@@ -11,3 +11,6 @@
 
 - https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html/boot-features-security-oauth2-resource-server.html
 - https://github.com/spring-projects/spring-security/issues/6342
+
+- https://liupeirong.github.io/postmanAzureFunctions/
+- https://medium.com/agilix/getting-started-with-windows-azure-ad-authentication-using-postman-e37a185b642d

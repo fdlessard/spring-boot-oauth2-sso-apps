@@ -28,10 +28,11 @@ spring:
             client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8080/login/oauth2/code/azure
-
         provider:
           okta:
             issuer-uri: https://dev-275566.okta.com/oauth2/default
+          azure:
+            issuer-uri: https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/oauth2/default
 
 azure:
   activedirectory:
