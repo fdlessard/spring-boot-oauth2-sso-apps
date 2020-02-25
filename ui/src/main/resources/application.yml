@@ -9,9 +9,8 @@ management:
 
 logging:
   level.io.fdlessard.codebites.oauth2.sso.apps.ui: DEBUG
-  level.org.springframework.web.client.RestTemplate: DEBUG
-  level.org.apache.http: DEBUG
-  level.org.apache.http.wire: DEBUG
+#    org.springframework.security: INFO
+#    org.springframework.security.oauth2: INFO
   level.root: DEBUG
 
 spring:
@@ -24,18 +23,22 @@ spring:
             client-id: 0oa2a55teeqhX2CcY4x6
             client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
           azure:
+            client-name: Azure
+            provider: azure
+            client-authentication-method: post
             client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
             client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
             authorization-grant-type: authorization_code
+            scope: openid, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
             redirect-uri: http://localhost:8080/login/oauth2/code/azure
         provider:
           okta:
             issuer-uri: https://dev-275566.okta.com/oauth2/default
           azure:
-            issuer-uri: https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/oauth2/default
-
-azure:
-  activedirectory:
-    tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
-    active-directory-groups: group1, group2
+            issuer-uri: https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/v2.0
+            authorization-uri: https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/oauth2/v2.0/authorize
+            token-uri: https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/oauth2/v2.0/token
+            user-info-uri: https://graph.microsoft.com/oidc/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/discovery/v2.0/keys
 

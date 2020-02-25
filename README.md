@@ -14,3 +14,16 @@
 
 - https://liupeirong.github.io/postmanAzureFunctions/
 - https://medium.com/agilix/getting-started-with-windows-azure-ad-authentication-using-postman-e37a185b642d
+
+
+https://github.com/AzureAD/azure-activedirectory-library-for-java
+https://github.com/AzureAD/microsoft-authentication-library-for-java
+https://github.com/microsoft/azure-spring-boot
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/sample-v2-code
+
+## Azure Nounce Issue
+
+- https://medium.com/@abhinavsonkar/making-azure-ad-oidc-compliant-5734b70c43ff 
+- https://www.voitanos.io/blog/validating-azure-ad-generated-oauth-tokens
+- https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/issues/609
