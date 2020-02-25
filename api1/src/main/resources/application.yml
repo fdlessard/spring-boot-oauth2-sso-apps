@@ -1,6 +1,9 @@
 server:
   port: 8081
 
+okta-url: https://dev-275566.okta.com
+azure-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
+
 logging:
   level:
     root: DEBUG
@@ -8,14 +11,13 @@ logging:
 #    org.springframework.security.oauth2: INFO
     io.fdlessard.codebites.oauth2.sso.apps.api1: DEBUG
 
-
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
-#         jwk-set-uri: https://dev-275566.okta.com/oauth2/default/v1/keys
-          jwk-set-uri: https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/discovery/v2.0/keys
+#         jwk-set-uri: ${okta-url}/oauth2/default/v1/keys
+          jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
 
 
 
