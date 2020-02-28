@@ -24,25 +24,25 @@ spring:
         registration:
           okta:
             client-name: Okta
+            provider: okta
             client-id: 0oa2a55teeqhX2CcY4x6
             client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
           azure:
             client-name: Azure
             provider: azure
-            client-authentication-method: post
             client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
             client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
-            authorization-grant-type: authorization_code
-            scope: openid, api://${azure-tenant-id}/fdlessard.Read
-            redirect-uri: http://localhost:8080/login/oauth2/code/azure
+            scope: openid, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
+#            authorization-grant-type: authorization_code
+#            redirect-uri: http://localhost:8080/login/oauth2/code/azure
         provider:
           okta:
             issuer-uri: ${okta-url}/oauth2/default
           azure:
             issuer-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0
-            authorization-uri: https://login.microsoftonline.com/${azure-tenant-id}/oauth2/v2.0/authorize
-            token-uri: https://login.microsoftonline.com/${azure-tenant-id}/oauth2/v2.0/token
-            user-info-uri: https://graph.microsoft.com/oidc/userinfo
-            user-name-attribute: sub
-            jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
+#            authorization-uri: https://login.microsoftonline.com/${azure-tenant-id}/oauth2/v2.0/authorize
+#            token-uri: https://login.microsoftonline.com/${azure-tenant-id}/oauth2/v2.0/token
+#            user-info-uri: https://graph.microsoft.com/oidc/userinfo
+#            user-name-attribute: sub
+#            jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
 

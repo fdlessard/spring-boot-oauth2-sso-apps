@@ -17,7 +17,9 @@ spring:
       resourceserver:
         jwt:
 #         jwk-set-uri: ${okta-url}/oauth2/default/v1/keys
-          jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
+         jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
+#          issuer-uri: ${okta-url}/oauth2/default
+#          issuer-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0
 
 
 

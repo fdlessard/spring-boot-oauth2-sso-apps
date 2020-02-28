@@ -86,4 +86,4 @@ public class SpringBootOauth2SsoUiApplication {
     });
   }
 
-  }
+}
