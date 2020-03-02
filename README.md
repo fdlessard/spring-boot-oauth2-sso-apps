@@ -22,7 +22,16 @@
 - https://github.com/AzureAD/microsoft-authentication-library-for-java
 - https://github.com/microsoft/azure-spring-boot
 
-https://docs.microsoft.com/en-us/azure/active-directory/develop/sample-v2-code
+- https://docs.microsoft.com/en-us/azure/active-directory/develop/sample-v2-code
+
+
+
+- https://www.youtube.com/watch?v=JnYIsvJY7gM&t=3350s
+- https://www.youtube.com/watch?v=WbnuwpSBXPs&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=24&t=77s
+- https://www.youtube.com/watch?v=ke13w8nab-k&t=747s
+- https://www.youtube.com/watch?v=YcAufUtfm44&t=71s
+- https://github.com/jgrandja/oauth2-protocol-patterns We were using the "s1p-2019" branch 
+
 
 ## Azure Nounce Issue
 

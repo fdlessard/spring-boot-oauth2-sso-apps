@@ -13,8 +13,8 @@ management:
 
 logging:
   level.io.fdlessard.codebites.oauth2.sso.apps.ui: DEBUG
-#    org.springframework.security: INFO
-#    org.springframework.security.oauth2: INFO
+  #    org.springframework.security: INFO
+  #    org.springframework.security.oauth2: INFO
   level.root: DEBUG
 
 spring:
@@ -22,19 +22,20 @@ spring:
     oauth2:
       client:
         registration:
-          okta:
+          spring-boot-oauth2-okta:
             client-name: Okta
             provider: okta
             client-id: 0oa2a55teeqhX2CcY4x6
             client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
-          azure:
+          spring-boot-azure-ads:
             client-name: Azure
             provider: azure
             client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
             client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
-            scope: openid, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
-#            authorization-grant-type: authorization_code
-#            redirect-uri: http://localhost:8080/login/oauth2/code/azure
+            client-authentication-method: none
+            scope: openid, profile, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
+        #            authorization-grant-type: authorization_code
+        #            redirect-uri: http://localhost:8080/login/oauth2/code/azure
         provider:
           okta:
             issuer-uri: ${okta-url}/oauth2/default
