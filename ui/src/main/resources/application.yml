@@ -2,14 +2,12 @@ server:
   port: 8080
 
 okta-url: https://dev-275566.okta.com
+okta-client-id: 0oa2a55teeqhX2CcY4x6
+okta-client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
+
 azure-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
-
-
-management:
-  trace:
-    http:
-      enabled: true
-      include: request-headers,response-headers,cookies,errors,parameters
+azure-client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
+azure-client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
 
 logging:
   level:
@@ -26,8 +24,8 @@ spring:
           ui-login:
             client-name: Azure
             provider: azure
-            client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
-            client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
+            client-id: ${azure-client-id}
+            client-secret: ${azure-client-secret}
 #            client-authentication-method: none
 #            authorization-grant-type: authorization_code
             scope: openid, profile, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
@@ -35,8 +33,9 @@ spring:
 
 #            client-name: Okta
 #            provider: okta
-#            client-id: 0oa2a55teeqhX2CcY4x6
-#            client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
+#            client-id: ${okta-client-id}
+#            client-secret:  ${okta-client-secret}
+#            redirect-uri: http://localhost:8080/login/oauth2/code/okta
         provider:
           azure:
             issuer-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0
