@@ -12,33 +12,32 @@ management:
       include: request-headers,response-headers,cookies,errors,parameters
 
 logging:
-  level.io.fdlessard.codebites.oauth2.sso.apps.ui: DEBUG
-  #    org.springframework.security: INFO
-  #    org.springframework.security.oauth2: INFO
-  level.root: DEBUG
+  level:
+    root: DEBUG
+    io.fdlessard.codebites.oauth2.sso.apps.ui: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
 
 spring:
   security:
     oauth2:
       client:
         registration:
-          spring-boot-oauth2-okta:
-            client-name: Okta
-            provider: okta
-            client-id: 0oa2a55teeqhX2CcY4x6
-            client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
-          spring-boot-azure-ads:
+          ui-login:
             client-name: Azure
             provider: azure
             client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
             client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
-            client-authentication-method: none
+#            client-authentication-method: none
+#            authorization-grant-type: authorization_code
             scope: openid, profile, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
-        #            authorization-grant-type: authorization_code
-        #            redirect-uri: http://localhost:8080/login/oauth2/code/azure
+            redirect-uri: http://localhost:8080/login/oauth2/code/azure
+
+#            client-name: Okta
+#            provider: okta
+#            client-id: 0oa2a55teeqhX2CcY4x6
+#            client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
         provider:
-          okta:
-            issuer-uri: ${okta-url}/oauth2/default
           azure:
             issuer-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0
 #            authorization-uri: https://login.microsoftonline.com/${azure-tenant-id}/oauth2/v2.0/authorize
@@ -46,4 +45,6 @@ spring:
 #            user-info-uri: https://graph.microsoft.com/oidc/userinfo
 #            user-name-attribute: sub
 #            jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
+          okta:
+            issuer-uri: ${okta-url}/oauth2/default
 
