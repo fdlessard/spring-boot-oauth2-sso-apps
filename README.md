@@ -32,6 +32,8 @@
 - https://www.youtube.com/watch?v=YcAufUtfm44&t=71s
 - https://github.com/jgrandja/oauth2-protocol-patterns We were using the "s1p-2019" branch 
 
+- https://www.youtube.com/watch?v=nrmQH5SqraA&t=1298s
+
 
 ## Azure Nounce Issue
 
