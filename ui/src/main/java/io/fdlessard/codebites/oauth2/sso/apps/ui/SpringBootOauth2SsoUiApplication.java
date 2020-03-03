@@ -32,7 +32,7 @@ public class SpringBootOauth2SsoUiApplication {
           new ServletOAuth2AuthorizedClientExchangeFilterFunction(clientRegistrations,
               authorizedClients);
       oauth2.setDefaultOAuth2AuthorizedClient(true);
-      oauth2.setDefaultClientRegistrationId("azure");
+      oauth2.setDefaultClientRegistrationId("ui-login");
 //      oauth2.setDefaultClientRegistrationId("okta");
       return WebClient.builder()
           .apply(oauth2.oauth2Configuration())

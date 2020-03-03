@@ -6,7 +6,6 @@ plugins {
 
 group = 'io.fdlessard.codebites.oauth2.sso.apps.api1'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
 
 configurations {
     developmentOnly
@@ -31,8 +30,6 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
     runtime group: 'com.nimbusds', name: 'oauth2-oidc-sdk', version: '6.23'
-
-
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
