@@ -33,7 +33,6 @@ public class SpringBootOauth2SsoUiApplication {
               authorizedClients);
       oauth2.setDefaultOAuth2AuthorizedClient(true);
       oauth2.setDefaultClientRegistrationId("ui-login");
-//      oauth2.setDefaultClientRegistrationId("okta");
       return WebClient.builder()
           .apply(oauth2.oauth2Configuration())
           .filters(exchangeFilterFunctions -> {
