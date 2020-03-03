@@ -41,7 +41,9 @@
 - https://www.voitanos.io/blog/validating-azure-ad-generated-oauth-tokens
 - https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/issues/609
 
+## Azure iss issue
 
+-  https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/560
 
 
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ApiController {
 
-  @PreAuthorize("hasRole('level-1')") //  working with GrantedAuthoritiesExtractor
+//  @PreAuthorize("hasRole('level-1')") //  working with GrantedAuthoritiesExtractor
 //  @PreAuthorize("#principal.credentials.claims['roles'].contains('ROLE-level-1')")
   @GetMapping("/api1")
   public String api1(Principal principal) {
