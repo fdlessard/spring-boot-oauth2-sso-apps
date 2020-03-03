@@ -49,11 +49,23 @@ public class UiController {
     log.debug("Calling UiController.api2() endpoint, before remote call");
 
     return this.webClient
-        .get()
-        .uri("http://localhost:8082/api2")
-        .retrieve()
-        .bodyToMono(String.class)
-        .block();
+            .get()
+            .uri("http://localhost:8082/api2")
+            .retrieve()
+            .bodyToMono(String.class)
+            .block();
+  }
+
+  @GetMapping("/api3")
+  public String api3() {
+    log.debug("Calling UiController.api3() endpoint, before remote call");
+
+    return this.webClient
+            .get()
+            .uri("http://localhost:8083/api3")
+            .retrieve()
+            .bodyToMono(String.class)
+            .block();
   }
 
 

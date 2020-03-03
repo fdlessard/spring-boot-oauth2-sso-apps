@@ -1,0 +1,21 @@
+server:
+  port: 8083
+
+okta-url: https://dev-275566.okta.com
+azure-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
+
+logging:
+  level.io.fdlessard.codebites.oauth2.sso.apps.api3: DEBUG
+#    org.springframework.security: INFO
+#    org.springframework.security.oauth2: INFO
+#  level.root: DEBUG
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+#         jwk-set-uri: ${okta-ur}l/oauth2/default/oauth2/default/v1/keys
+          jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0/keys
+
+

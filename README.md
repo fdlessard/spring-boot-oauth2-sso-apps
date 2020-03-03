@@ -29,3 +29,11 @@ https://docs.microsoft.com/en-us/azure/active-directory/develop/sample-v2-code
 - https://medium.com/@abhinavsonkar/making-azure-ad-oidc-compliant-5734b70c43ff 
 - https://www.voitanos.io/blog/validating-azure-ad-generated-oauth-tokens
 - https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/issues/609
+
+
+
+
+
+https://www.youtube.com/watch?v=EBdm683HdAo&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=159&t=0s
+https://www.youtube.com/watch?v=RRMO4oNptoQ&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=157&t=0s
+https://www.youtube.com/watch?v=ke13w8nab-k&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=163&t=444s
