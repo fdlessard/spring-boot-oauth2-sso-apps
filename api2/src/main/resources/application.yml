@@ -5,17 +5,20 @@ okta-url: https://dev-275566.okta.com
 azure-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
 
 logging:
-  level.io.fdlessard.codebites.oauth2.sso.apps.api2: DEBUG
-#    org.springframework.security: INFO
-#    org.springframework.security.oauth2: INFO
-#  level.root: DEBUG
+  level:
+    root: DEBUG
+    io.fdlessard.codebites.oauth2.sso.apps.api2: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
 
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
-#         jwk-set-uri: ${okta-ur}l/oauth2/default/oauth2/default/v1/keys
-          jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0/keys
+## For azure the issuer-uri work only if "accessTokenAcceptedVersion": 2 in the manifest. If not, use jwk-set-uri
+#          issuer-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0
+##          jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
+          issuer-uri: ${okta-url}/oauth2/default
 
 

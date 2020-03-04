@@ -6,7 +6,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 
 @SpringBootApplication
 @EnableGlobalMethodSecurity(prePostEnabled=true)
-
 public class SpringBootOauth2SsoApi1Application {
 
   public static void main(String[] args) {

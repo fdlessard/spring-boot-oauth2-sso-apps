@@ -1,16 +1,27 @@
 server:
   port: 8080
 
-okta-url: https://dev-275566.okta.com
-okta-client-id: 0oa2a55teeqhX2CcY4x6
-okta-client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
+# Okta
 
+okta-url: https://dev-275566.okta.com
+
+okta-ui-login-client-id: 0oa2a55teeqhX2CcY4x6
+okta-ui-login-client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
+
+okta-api1-client-id: 0oa30501tpULFXzK64x6
+okta-api1-client-secret: ImoEqh8DHq0FMij8OrLIKKUa9nbKkFrsnGRAEHNV
+
+# Azure Active Directory Service
 azure-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
+
 azure-ui-login-client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
 azure-ui-login-client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
 
 azure-api1-client-id: 3025d3c1-8fde-4fce-a04d-5baf4f1f9685
 azure-api1-client-secret: .l/20S@vHSxMRc6fG.8TpB=IuVB5gb2j
+
+azure-api2-client-id: 3025d3c1-8fde-4fce-a04d-5baf4f1f9685
+azure-api2-client-secret: .l/20S@vHSxMRc6fG.8TpB=IuVB5gb2j
 
 logging:
   level:
@@ -26,24 +37,37 @@ spring:
         registration:
           ui-login:
             client-name: UI Login
-            provider: azure
-            client-id: ${azure-ui-login-client-id}
-            client-secret: ${azure-ui-login-client-secret}
-###            client-authentication-method: none
-###            authorization-grant-type: authorization_code
-            scope: openid, profile, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
-            redirect-uri: http://localhost:8080/login/oauth2/code/azure
-#            client-name: Okta
-#            provider: okta
-#            client-id: ${okta-client-id}
-#            client-secret:  ${okta-client-secret}
-#            redirect-uri: http://localhost:8080/login/oauth2/code/okta
-          api1:
-            client-name: Api1
-            provider: azure
-            client-id: ${azure-api1-client-id}
-            client-secret: ${azure-api1-client-secret}
+            provider: okta
+            client-id: ${okta-ui-login-client-id}
+            client-secret: ${okta-ui-login-client-secret}
+            redirect-uri: http://localhost:8080/login/oauth2/code/okta
+            scope: openid,profile,email
+#            provider: azure
+#            client-id: ${azure-ui-login-client-id}
+#            client-secret: ${azure-ui-login-client-secret}
+####            client-authentication-method: none
+####            authorization-grant-type: authorization_code
+#            scope: openid, profile, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
+#            redirect-uri: http://localhost:8080/login/oauth2/code/azure
+          api-1:
+            client-name: API 1
+            provider: okta
+            client-id: ${okta-api1-client-id}
+            client-secret: ${okta-api1-client-secret}
+#            authorization-grant-type: client_credentials
+            redirect-uri: "{baseUrl}/api1"
+            scope: authority-api1
+        ##            provider: azure
+##            client-id: ${azure-api1-client-id}
+##            client-secret: ${azure-api1-client-secret}
+#          api-2:
+#            client-name:  API 2
+#            provider: azure
+#            client-id: ${azure-api2-client-id}
+#            client-secret: ${azure-api2-client-secret}
         provider:
+          okta:
+            issuer-uri: ${okta-url}/oauth2/default
           azure:
             issuer-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0
 ## The following are not needed if you provide issuer-uri
@@ -52,5 +76,3 @@ spring:
 #            user-info-uri: https://graph.microsoft.com/oidc/userinfo
 #            user-name-attribute: sub
 #            jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
-          okta:
-            issuer-uri: ${okta-url}/oauth2/default

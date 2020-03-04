@@ -21,8 +21,6 @@ public class UiController {
 
   private WebClient webClient;
 
-
-
   @GetMapping("/ui")
   public String ui(Principal principal) {
     log.debug("Called UiController.ui() endpoint");
