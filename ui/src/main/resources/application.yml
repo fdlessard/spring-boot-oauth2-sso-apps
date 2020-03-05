@@ -40,7 +40,10 @@ spring:
             provider: okta
             client-id: ${okta-ui-login-client-id}
             client-secret: ${okta-ui-login-client-secret}
-            redirect-uri: http://localhost:8080/login/oauth2/code/okta
+#            client-authentication-method: none
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+
             scope: openid,profile,email
 #            provider: azure
 #            client-id: ${azure-ui-login-client-id}
@@ -57,7 +60,7 @@ spring:
 #            authorization-grant-type: client_credentials
             redirect-uri: "{baseUrl}/api1"
             scope: authority-api1
-        ##            provider: azure
+##            provider: azure
 ##            client-id: ${azure-api1-client-id}
 ##            client-secret: ${azure-api1-client-secret}
 #          api-2:
