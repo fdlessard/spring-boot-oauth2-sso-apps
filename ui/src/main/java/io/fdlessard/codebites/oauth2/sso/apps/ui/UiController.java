@@ -44,6 +44,7 @@ public class UiController {
 
   @GetMapping("/api2")
   public String api2() {
+
     log.debug("Calling UiController.api2() endpoint, before remote call");
 
     return this.webClient
@@ -54,9 +55,9 @@ public class UiController {
             .block();
   }
 
-  @GetMapping("/api3")
+  @GetMapping("/api23")
   public String api3() {
-    log.debug("Calling UiController.api3() endpoint, before remote call");
+    log.debug("Calling UiController.api23() endpoint, before remote call");
 
     return this.webClient
             .get()
@@ -65,6 +66,5 @@ public class UiController {
             .bodyToMono(String.class)
             .block();
   }
-
 
 }

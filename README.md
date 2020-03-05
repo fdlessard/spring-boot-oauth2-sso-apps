@@ -45,8 +45,21 @@
 
 -  https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/560
 
+## Learning videos
+
+- https://www.youtube.com/watch?v=EBdm683HdAo&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=159&t=0s
+- https://www.youtube.com/watch?v=RRMO4oNptoQ&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=157&t=0s
+- https://www.youtube.com/watch?v=ke13w8nab-k&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=163&t=444s
+
+## OAuth2 Doc
+
+- https://www.oauth.com/
 
 
-https://www.youtube.com/watch?v=EBdm683HdAo&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=159&t=0s
-https://www.youtube.com/watch?v=RRMO4oNptoQ&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=157&t=0s
-https://www.youtube.com/watch?v=ke13w8nab-k&list=PLAdzTan_eSPRlQ8t4TU5c-AB4SHV939M6&index=163&t=444s
+## UI Login 
+
+![ui-login](doc/ui-login.png)
+
+## Api 1
+
+![api1-jwt-authentication](doc/api1-jwt-authentication.png)

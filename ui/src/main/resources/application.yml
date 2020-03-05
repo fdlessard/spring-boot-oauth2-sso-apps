@@ -11,6 +11,9 @@ okta-ui-login-client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
 okta-api1-client-id: 0oa30501tpULFXzK64x6
 okta-api1-client-secret: ImoEqh8DHq0FMij8OrLIKKUa9nbKkFrsnGRAEHNV
 
+okta-api2-client-id: 0oa320swcyBDv8VbR4x6
+okta-api2-client-secret: MKQTKEOiJ6V0VqhOpPUatKohuzlNGKwh-GQRMUl4
+
 # Azure Active Directory Service
 azure-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
 
@@ -43,7 +46,6 @@ spring:
 #            client-authentication-method: none
             authorization-grant-type: authorization_code
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-
             scope: openid,profile,email
 #            provider: azure
 #            client-id: ${azure-ui-login-client-id}
@@ -57,17 +59,19 @@ spring:
             provider: okta
             client-id: ${okta-api1-client-id}
             client-secret: ${okta-api1-client-secret}
-#            authorization-grant-type: client_credentials
+            authorization-grant-type: client_credentials
             redirect-uri: "{baseUrl}/api1"
             scope: authority-api1
 ##            provider: azure
 ##            client-id: ${azure-api1-client-id}
 ##            client-secret: ${azure-api1-client-secret}
-#          api-2:
-#            client-name:  API 2
-#            provider: azure
-#            client-id: ${azure-api2-client-id}
-#            client-secret: ${azure-api2-client-secret}
+          api-2:
+            client-name:  API 2
+            provider: okta
+            client-id: ${okta-api2-client-id}
+            client-secret: ${okta-api2-client-secret}
+            redirect-uri: "{baseUrl}/api2"
+            scope: authority-api2
         provider:
           okta:
             issuer-uri: ${okta-url}/oauth2/default
