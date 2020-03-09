@@ -42,7 +42,7 @@ spring:
             provider: okta
             client-id: ${okta-ui-login-client-id}
 #            client-secret: ${okta-ui-login-client-secret}
-            client-authentication-method: post
+            client-authentication-method: none
 #            authorization-grant-type: authorization_code
 #            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             scope: openid,profile,email
@@ -53,7 +53,6 @@ spring:
 ####            authorization-grant-type: authorization_code
 #            scope: openid, profile, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
 #            redirect-uri: http://localhost:8080/login/oauth2/code/azure
-
           api-1:
             client-name: API 1
             provider: okta
