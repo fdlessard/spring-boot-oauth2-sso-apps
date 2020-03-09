@@ -42,9 +42,9 @@ spring:
             client-name: UI Login
             provider: okta
             client-id: ${okta-ui-login-client-id}
-            client-secret: ${okta-ui-login-client-secret}
-#            client-authentication-method: none
-            authorization-grant-type: authorization_code
+#            client-secret: ${okta-ui-login-client-secret}
+            client-authentication-method: none
+#            authorization-grant-type: authorization_code
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             scope: openid,profile,email
 #            provider: azure

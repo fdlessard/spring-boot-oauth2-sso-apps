@@ -55,6 +55,9 @@
 
 - https://www.oauth.com/
 
+- notes that okta implementatiom of authorization uses the client secret 
+- https://support.okta.com/help/s/question/0D51Y00005xyT6j/spa-oauth-flow-recommendation-and-token-refresh
+- https://developer.okta.com/blog/2020/01/23/pkce-oauth2-spring-boot
 
 ## UI Login 
 
