@@ -17,9 +17,9 @@ spring:
       resourceserver:
         jwt:
 ## For azure the issuer-uri work only if "accessTokenAcceptedVersion": 2 in the manifest. If not, use jwk-set-uri
-#          issuer-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0
+          issuer-uri: https://login.microsoftonline.com/${azure-tenant-id}/v2.0
 ##          jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
-          issuer-uri: ${okta-url}/oauth2/default
+#          issuer-uri: ${okta-url}/oauth2/default
 
 
 

@@ -18,7 +18,6 @@ public class UiController {
   @Autowired
   private OAuth2AuthorizedClientRepository authorizedClient;
   @Autowired
-
   private WebClient webClient;
 
   @GetMapping("/ui")
