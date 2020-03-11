@@ -32,7 +32,8 @@ public class SpringBootOauth2SsoUiApplication {
           new ServletOAuth2AuthorizedClientExchangeFilterFunction(clientRegistrations,
               authorizedClients);
       oauth2.setDefaultOAuth2AuthorizedClient(true);
-      oauth2.setDefaultClientRegistrationId("api-1");
+//      oauth2.setDefaultClientRegistrationId("api-1");
+      oauth2.setDefaultClientRegistrationId("ui-login");
       return WebClient.builder()
           .apply(oauth2.oauth2Configuration())
           .filters(exchangeFilterFunctions -> {

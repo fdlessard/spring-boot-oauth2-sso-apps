@@ -44,7 +44,9 @@ spring:
 #            client-secret: ${okta-ui-login-client-secret}
 #            client-authentication-method: none
 #            authorization-grant-type: authorization_code
-            scope: openid,profile,email,
+## The api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read scope is needed to prevent adding a nounce
+## in Azure Microsoft Active Directory (see README file)
+            scope: openid,profile,email,api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
             provider: azure
             client-id: ${azure-ui-login-client-id}
             client-secret: ${azure-ui-login-client-secret}

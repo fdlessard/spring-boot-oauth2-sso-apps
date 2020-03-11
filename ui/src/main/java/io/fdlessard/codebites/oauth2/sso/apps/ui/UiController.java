@@ -21,23 +21,27 @@ public class UiController {
   private WebClient webClient;
 
   @GetMapping("/ui")
-  public String ui(Principal principal) {
-    log.debug("Called UiController.ui() endpoint");
+  public Account uiAccount(Principal principal) {
+
+    log.debug("UiController.uiAccount()");
+    log.debug("UiController.uiAccount() principal: {}", principal);
     String name = principal.getName();
-    return "You made it to protected ui! " + name;
+
+    return buildAccount();
   }
 
   @GetMapping("/api1")
-  public String api1(Principal principal) {
-    String name = principal.getName();
+  public Account api1(Principal principal) {
 
-    log.debug("Calling UiController.api1() endpoint, before remote call " + name);
+    log.debug("UiController.api1()");
+    log.debug("UiController.api1() principal {}", principal);
+    String name = principal.getName();
 
     return this.webClient
         .get()
         .uri("http://localhost:8081/api1")
         .retrieve()
-        .bodyToMono(String.class)
+        .bodyToMono(Account.class)
         .block();
   }
 
@@ -64,6 +68,15 @@ public class UiController {
             .retrieve()
             .bodyToMono(String.class)
             .block();
+  }
+
+  private Account buildAccount() {
+    return Account.builder()
+        .id(0l)
+        .code("code 0")
+        .name("Account 0")
+        .description("Account 0 from UI")
+        .build();
   }
 
 }
