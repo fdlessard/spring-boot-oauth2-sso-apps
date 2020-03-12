@@ -3,27 +3,23 @@ server:
 
 # Okta
 okta-url: https://dev-275566.okta.com
-
 okta-ui-login-client-id: 0oa2a55teeqhX2CcY4x6
-okta-ui-login-client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
-
+okta-ui-login-client-secret: T3uK[4iCM_2wvC@.aNSXiO9:4oN8ybCO
 okta-api1-client-id: 0oa30501tpULFXzK64x6
 okta-api1-client-secret: ImoEqh8DHq0FMij8OrLIKKUa9nbKkFrsnGRAEHNV
-
 okta-api2-client-id: 0oa320swcyBDv8VbR4x6
 okta-api2-client-secret: MKQTKEOiJ6V0VqhOpPUatKohuzlNGKwh-GQRMUl4
 
 # Personal Azure Active Directory Service
-azure-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
+azure-fd-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
+azure-fd-ui-login-client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
+azure-fd-ui-login-client-secret: k/A63Htiw44te?esFsFzr?YCfMiMxOr/
+azure-fd-api1-client-id: 3025d3c1-8fde-4fce-a04d-5baf4f1f9685
+azure-fd-api1-client-secret: h.XR0qWviQ:V:07M.JSFduwcV0qU@4Bt
+azure-fd-api2-client-id: 3025d3c1-8fde-4fce-a04d-5baf4f1f9685
+azure-fd-api2-client-secret: .l/20S@vHSxMRc6fG.8TpB=IuVB5gb2j
 
-azure-ui-login-client-id: b19a6e57-ea73-49f9-9a00-37a76b8781ef
-azure-ui-login-client-secret: 2Mdp73zxsRQ/?wjOmos:zi3qGsT?=d2U
 
-azure-api1-client-id: 3025d3c1-8fde-4fce-a04d-5baf4f1f9685
-azure-api1-client-secret: h.XR0qWviQ:V:07M.JSFduwcV0qU@4Bt
-
-azure-api2-client-id: 3025d3c1-8fde-4fce-a04d-5baf4f1f9685
-azure-api2-client-secret: .l/20S@vHSxMRc6fG.8TpB=IuVB5gb2j
 
 logging:
   level:
@@ -46,15 +42,16 @@ spring:
 #            authorization-grant-type: authorization_code
 ## The api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read scope is needed to prevent adding a nounce
 ## in Azure Microsoft Active Directory (see README file)
-            scope: openid,profile,email,api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
-            provider: azure
-            client-id: ${azure-ui-login-client-id}
-            client-secret: ${azure-ui-login-client-secret}
+            provider: azure-nbc
+            client-id: ${azure-nbc-ui-login-client-id}
+            client-secret: ${azure-nbc-ui-login-client-secret}
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-####            client-authentication-method: none
-####            authorization-grant-type: authorization_code
+            authorization-grant-type: authorization_code
+            scope: openid,profile,email,api://40ce5a52-6aa3-4d05-824d-5f74c6076010/FMCRM.Read
+#            scope: openid,profile,email,api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
+#            authorization-grant-type: authorization_code
+#            client-authentication-method: none
 #            scope: openid, profile, email, api://b19a6e57-ea73-49f9-9a00-37a76b8781ef/fdlessard.Read
-#            redirect-uri: http://localhost:8080/login/oauth2/code/azure
           api-1:
             client-name: API 1
             authorization-grant-type: client_credentials
@@ -87,4 +84,5 @@ spring:
 #            user-info-uri: https://graph.microsoft.com/oidc/userinfo
 #            user-name-attribute: sub
 #            jwk-set-uri: https://login.microsoftonline.com/${azure-tenant-id}/discovery/v2.0/keys
-#https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/v2.0/.well-known/openid-configuration
+
+# https://login.microsoftonline.com/a805eb36-3833-4902-88c2-5cb74b2cbcbf/v2.0/.well-known/openid-configuration
