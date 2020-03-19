@@ -10,12 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class Api2Controller {
 
   @GetMapping("/api2")
-  public String api1(Principal principal) {
+  public Account api2(Principal principal) {
 
-    log.debug("Called Api2Controller.api2() endpoint");
+    log.debug("Api2Controller.api2() endpoint");
+    return buildAccount();
+  }
 
-    String name = principal.getName();
-
-    return "Made it to protected api2 on resource server! " + name;
+  private static Account buildAccount() {
+    return Account.builder()
+        .id(2l)
+        .code("Code 2")
+        .name("Account 2")
+        .description("Account 2 from API 2")
+        .build();
   }
 }

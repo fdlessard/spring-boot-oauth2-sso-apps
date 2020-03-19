@@ -3,8 +3,6 @@ package io.fdlessard.codebites.oauth2.sso.apps.ui;
 import java.security.Principal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -14,18 +12,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class UiController {
 
   @Autowired
-  private ClientRegistrationRepository clientRegistrations;
+  private WebClient webClientApi1;
   @Autowired
-  private OAuth2AuthorizedClientRepository authorizedClient;
-  @Autowired
-  private WebClient webClient;
+  private WebClient webClientApi2;
 
   @GetMapping("/ui")
   public Account uiAccount(Principal principal) {
 
     log.debug("UiController.uiAccount()");
-    log.debug("UiController.uiAccount() principal: {}", principal);
-    String name = principal.getName();
 
     return buildAccount();
   }
@@ -33,11 +27,9 @@ public class UiController {
   @GetMapping("/api1")
   public Account api1(Principal principal) {
 
-    log.debug("UiController.api1()");
     log.debug("UiController.api1() principal {}", principal);
-    String name = principal.getName();
 
-    return this.webClient
+    return this.webClientApi1
         .get()
         .uri("http://localhost:8081/api1")
         .retrieve()
@@ -45,32 +37,33 @@ public class UiController {
         .block();
   }
 
+  @GetMapping("/api12")
+  public String api12(Principal principal) {
+
+    log.debug("UiController.api12() principal {}", principal);
+
+    return this.webClientApi1
+        .get()
+        .uri("http://localhost:8081/api12")
+        .retrieve()
+        .bodyToMono(String.class)
+        .block();
+  }
+
   @GetMapping("/api2")
-  public String api2() {
+  public Account api2(Principal principal) {
 
-    log.debug("Calling UiController.api2() endpoint, before remote call");
+    log.debug("UiController.api2() principal {}", principal);
 
-    return this.webClient
-            .get()
-            .uri("http://localhost:8082/api2")
-            .retrieve()
-            .bodyToMono(String.class)
-            .block();
+    return this.webClientApi2
+        .get()
+        .uri("http://localhost:8082/api2")
+        .retrieve()
+        .bodyToMono(Account.class)
+        .block();
   }
 
-  @GetMapping("/api23")
-  public String api3() {
-    log.debug("Calling UiController.api23() endpoint, before remote call");
-
-    return this.webClient
-            .get()
-            .uri("http://localhost:8083/api3")
-            .retrieve()
-            .bodyToMono(String.class)
-            .block();
-  }
-
-  private Account buildAccount() {
+  private static Account buildAccount() {
     return Account.builder()
         .id(0l)
         .code("code 0")

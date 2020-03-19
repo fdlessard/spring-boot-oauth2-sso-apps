@@ -35,15 +35,18 @@
 - https://www.youtube.com/watch?v=nrmQH5SqraA&t=1298s
 
 
-## Azure Nounce Issue
+## Azure Nounce Issue and other issues
 
 - https://medium.com/@abhinavsonkar/making-azure-ad-oidc-compliant-5734b70c43ff 
 - https://www.voitanos.io/blog/validating-azure-ad-generated-oauth-tokens
 - https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/issues/609
 
+client credentials
+- https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-credential-flows
+
 ## Azure iss issue
 
--  https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/560
+- https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/560
 
 ## Learning videos
 

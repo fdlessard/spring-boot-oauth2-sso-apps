@@ -8,6 +8,8 @@ group = 'io.fdlessard.codebites.oauth2.sso.apps.ui'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+ext['spring-security.version']='5.3.0.RELEASE'
+
 configurations {
     developmentOnly
     runtimeClasspath {
