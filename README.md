@@ -41,7 +41,7 @@
 - https://www.voitanos.io/blog/validating-azure-ad-generated-oauth-tokens
 - https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/issues/609
 
-client credentials
+### client credentials
 - https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-credential-flows
 
 ## Azure iss issue
@@ -58,14 +58,6 @@ client credentials
 
 - https://www.oauth.com/
 
-- notes that okta implementatiom of authorization uses the client secret 
+- note that okta implementation of authorization uses the client secret 
 - https://support.okta.com/help/s/question/0D51Y00005xyT6j/spa-oauth-flow-recommendation-and-token-refresh
 - https://developer.okta.com/blog/2020/01/23/pkce-oauth2-spring-boot
-
-## UI Login 
-
-![ui-login](doc/ui-login.png)
-
-## Api 1
-
-![api1-jwt-authentication](doc/api1-jwt-authentication.png)
