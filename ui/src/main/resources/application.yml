@@ -4,7 +4,7 @@ server:
 # Okta
 okta-url: https://dev-275566.okta.com
 okta-ui-login-client-id: 0oa2a55teeqhX2CcY4x6
-okta-ui-login-client-secret: T3uK[4iCM_2wvC@.aNSXiO9:4oN8ybCO
+okta-ui-login-client-secret: HvpaK1PR-wWm6dzioLSjXFKMVkNiz6-emo7YHc6A
 okta-api1-client-id: 0oa30501tpULFXzK64x6
 okta-api1-client-secret: ImoEqh8DHq0FMij8OrLIKKUa9nbKkFrsnGRAEHNV
 okta-api2-client-id: 0oa320swcyBDv8VbR4x6
@@ -64,7 +64,7 @@ spring:
 #            client-secret: ${okta-api1-client-secret}
 #            scope: authority-api1
           api-2:
-            client-name:  API 2
+            client-name: API 2
             provider: azure
             authorization-grant-type: client_credentials
             redirect-uri: "{baseUrl}/api2"
@@ -74,7 +74,6 @@ spring:
 #            provider: okta
 #            client-id: ${okta-api2-client-id}
 #            client-secret: ${okta-api2-client-secret}
-#            redirect-uri: "{baseUrl}/api2"
 #            scope: authority-api2
         provider:
           okta:

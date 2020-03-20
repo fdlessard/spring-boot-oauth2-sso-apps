@@ -2,8 +2,10 @@ server:
   port: 8081
 
 okta-url: https://dev-275566.okta.com
-azure-fdl-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
+okta-api2-client-id: 0oa320swcyBDv8VbR4x6
+okta-api2-client-secret: MKQTKEOiJ6V0VqhOpPUatKohuzlNGKwh-GQRMUl4
 
+azure-fdl-tenant-id: a805eb36-3833-4902-88c2-5cb74b2cbcbf
 azure-fdl-api2-client-id: acf35bd0-20f8-4f3d-82b9-ba68b59616fe
 azure-fdl-api2-client-secret: W:@0z0WI/AfD?LSEXsw8YjaKlM1MKIW?
 
@@ -20,18 +22,17 @@ spring:
       client:
         registration:
           api-2:
-            client-name:  API 2
+            client-name: API 2
             provider: azure
             authorization-grant-type: client_credentials
             redirect-uri: "{baseUrl}/api2"
             client-id: ${azure-fdl-api2-client-id}
             client-secret: ${azure-fdl-api2-client-secret}
             scope: 'api://acf35bd0-20f8-4f3d-82b9-ba68b59616fe/.default'
-    #            provider: okta
-    #            client-id: ${okta-api2-client-id}
-    #            client-secret: ${okta-api2-client-secret}
-    #            redirect-uri: "{baseUrl}/api2"
-    #            scope: authority-api2
+#            provider: okta
+#            client-id: ${okta-api2-client-id}
+#            client-secret: ${okta-api2-client-secret}
+#            scope: authority-api2
         provider:
           okta:
             issuer-uri: ${okta-url}/oauth2/default
